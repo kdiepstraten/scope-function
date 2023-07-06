@@ -14,6 +14,14 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // * Hoe zorgt ik ervoor dat wanneer ik een cijfer tegenkom die aan de conditie voldoet, ik dit ergens kan bijhouden?
 // Log het antwoord in de terminal.
 
+let number = [];
+for (let i = 0; i < grades.length; i++) {
+    if (grades[i] >= 8) {
+        number.push(grades[i]);
+    }
+}
+console.log(number.length);
+
 // ---- Verwachte uitkomst: 6
 
 
@@ -27,7 +35,21 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // cumLaude([6, 4, 5]) geeft 0
 // cumLaude([8, 9, 4, 6, 10]) geeft 3
 
+const cumLaude1 = [8, 9, 4, 6, 10];
+const cumLaude2 = [6, 4, 5];
 
+function cumLaude(array) {
+    let numbers = [];
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] >= 8) {
+            numbers.push(array[i]);
+        }
+    }
+    return numbers.length;
+}
+
+console.log(cumLaude(cumLaude1));
+console.log(cumLaude(cumLaude2));
 
 
 /* Opdracht  2: Gemiddeld cijfer */
@@ -42,6 +64,17 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 
 // ---- Verwachte uitkomst: 6.642857142857143
 
+function average(grades){
+    let add = 0;
+    for (let i = 0; i < grades.length; i++) {
+         add += grades[i];
+    }
+    let result =  add / grades.length;
+    return result.toFixed(2);
+}
+
+console.log(average(grades));
+
 
 /* 2b: Omschrijven tot een herbruikbare functie */
 // Schrijf een functie genaamd averageGrade, die een array van cijfers verwacht (zoals grades) en het gemiddelde cijfer teruggeeft. Gebruik hiervoor jouw antwoord van 2a.
@@ -53,12 +86,23 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // averageGrade([6, 4, 5]) geeft xxxx
 // averageGrade([8, 9, 4, 6, 10]) geeft xxxx
 
+averageGrade1 = [6, 4, 5];
+averageGrade2 = [8, 9, 4, 6, 10];
+function averageGrade(grades){
+    return average(grades);
+}
+
+console.log(averageGrade(averageGrade1));
+console.log(averageGrade(averageGrade2));
+
+
 
 /* 2c: Afronden op twee decimalen */
 // Zorg ervoor dat het gemiddelde cijfer dat wordt teruggegeven uit de functie netjes wordt afgerond op twee decimalen.
 // Tip: Google is your best friend!
 
 
+// Zie 2a!!
 
 
 /* Bonusopdracht: hoogste cijfer */
